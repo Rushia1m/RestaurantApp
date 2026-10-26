@@ -24,7 +24,7 @@ namespace RestaurantApp
             }
 
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(new string('k', 40));
+            Console.WriteLine(new string('o', 40));
 
 
             double avg = restaurants.Average(item => item.Rate);
