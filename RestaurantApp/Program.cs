@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq; // จำเป็นต้องใช้สำหรับ .Average()
 
 namespace RestaurantApp
 {
@@ -7,14 +8,13 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            
             List<Restaurant> restaurants = new List<Restaurant>()
             {
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
                 new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7),
                 new Restaurant(4, "Huguosi Snacks", "Snacks", 4.2),
-                new Restaurant(5, "Haidilao Hot Pot", "Hot Pot", 4.8) 
+                new Restaurant(5, "Haidilao Hot Pot", "Hot Pot", 4.8)
             };
 
             
@@ -22,6 +22,15 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"{item.Name} | Type: {item.Type} | Rate: {item.Rate}");
             }
+
+            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('/', 40));
+
+
+            double avg = restaurants.Average(item => item.Rate);
+
+            
+            Console.WriteLine($"ค่าเฉลี่ยคือ: {avg:F2}");
         }
     }
 
@@ -32,11 +41,10 @@ namespace RestaurantApp
         public string Type { get; set; }
         public double Rate { get; set; }
 
-        
         public Restaurant(int id, string name, string type, double rate)
         {
             this.Id = id;
-            this.Name = name; 
+            this.Name = name;
             this.Type = type;
             this.Rate = rate;
         }
