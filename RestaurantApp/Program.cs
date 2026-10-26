@@ -22,8 +22,9 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"{item.Name} | Type: {item.Type} | Rate: {item.Rate}");
             }
-
+            int totalRetaurants = restaurants.Count;
             Console.WriteLine(new string('-', 40));
+            Console.WriteLine($"จำนวนร้าน{totalRetaurants}");
        
 
 
